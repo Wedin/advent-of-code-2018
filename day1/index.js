@@ -3,6 +3,7 @@ const fs = require('fs');
 function getInputArray() {
     var input = fs.readFileSync('./input.txt', 'utf8');
     return input.split('\n')
+        .map(parseFrequency)
 }
 
 function parseFrequency(freq) {
@@ -13,27 +14,25 @@ function parseFrequency(freq) {
 
 function puzzle() {
     const input = getInputArray();
-    return input.reduce((acc, curr) => {
-        return acc + parseFrequency(curr)
-    }, 0)
+    return input.reduce((acc, curr) => acc + curr, 0)
 }
 
 function part2Puzzle() {
     const input = getInputArray();
-    const frequencyMap = {};
+    const seenFrequenciesMap = {};
     let duplicatedFrequency = undefined;
     let freqChange = 0;
 
     while (!duplicatedFrequency) {
         for (let index = 0; index < input.length; index++) {
-            const currFreq = parseFrequency(input[index]);
+            const currFreq = input[index];
             freqChange = freqChange + currFreq;
 
-            if (frequencyMap[freqChange]) {
+            if (seenFrequenciesMap[freqChange]) {
                 duplicatedFrequency = freqChange;
                 break;
             } else {
-                frequencyMap[freqChange] = true;
+                seenFrequenciesMap[freqChange] = true;
             }
         }
     }
