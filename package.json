@@ -1,0 +1,50 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint './**/*.js' --fix --ext .js"
+  },
+  "author": "wedin <hej@danielwedin.se>",
+  "license": "ISC",
+  "prettier": {
+    "printWidth": 140,
+    "trailingComma": "es5",
+    "arrowParens": "avoid",
+    "overrides": [
+      {
+        "files": ".{prettier,babel,stylelint,eslint}rc",
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "commonjs": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "no-console": "off"
+    }
+  }
+}
