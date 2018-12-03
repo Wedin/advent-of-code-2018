@@ -1,13 +1,3 @@
-/* global __dirname */
-const fs = require("fs");
-var path = require("path");
-
-function getInput() {
-  var inputPath = path.join(__dirname, "input.txt");
-  var input = fs.readFileSync(inputPath, "utf8");
-  return input.split("\n");
-}
-
 function countChars(string) {
   const splitId = string.split("");
   return splitId.reduce((acc, char) => {
@@ -63,9 +53,6 @@ function part2(input) {
     }
   }
 }
-
-part1(getInput());
-part2(getInput());
 
 module.exports = {
   part1,

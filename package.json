@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint './**/*.js' --fix --ext .js",
-    "start": "node run.js"
+    "start": "node index.js"
   },
   "author": "wedin <hej@danielwedin.se>",
   "license": "ISC",

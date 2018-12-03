@@ -25,11 +25,11 @@ function getInput(path) {
 
 function runSolution(solver, day, part, input) {
   if (!solver[part]) {
-    console.log(`No solution for ${day} ${part}`);
+    console.log(`No solution for ${day} ${part}!`);
     return;
   }
   const result = solver[part](input);
-  console.log(`Running ${day} ${part}`);
+  console.log(`Running ${day} ${part}:`);
   console.log(result);
 }
 
@@ -38,7 +38,8 @@ function run() {
   const path = getPath(args);
 
   if (path == "" || path == "./") {
-    throw "No solution!";
+    console.log(`No solution for ${args.day}!`);
+    return;
   }
 
   const solver = require(`${path}/index.js`);
